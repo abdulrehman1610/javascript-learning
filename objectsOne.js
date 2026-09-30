@@ -1,4 +1,4 @@
-// Singleton: IF OBJECT MADE FROM CONSTRUCTOR THAN IT'S A SINGLETON OBJECT i.e: Object.create
+// Singleton: IF OBJECT MADE FROM CONSTRUCTOR THAN IT'S A SINGLETON OBJECT i.e: Object.create AND  const obj = new Object ()
 
 // Object Literal
 const key = Symbol("key")
