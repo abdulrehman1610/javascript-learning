@@ -1,118 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-  background: radial-gradient(circle at 50% 30%, #1a2236 0%, #0a0d14 100%);
-  color: #ffffff;
+  background-color: #09090b;
+  background-image: radial-gradient(circle at 50% 0%, #18181b 0%, #09090b 75%);
+  color: #fafafa;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Circular Container with White Glow Drop Shadow */
 .container {
-  background: rgba(18, 24, 38, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  width: 480px;
-  height: 480px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+  width: 400px;
+  padding: 40px 36px;
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 35px;
-  /* Multi-layered White Drop Shadow Glow */
-  box-shadow: 
-    0 0 35px rgba(255, 255, 255, 0.22),
-    0 15px 40px rgba(0, 0, 0, 0.7);
 }
 
 h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 1.2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 16px;
+  color: #71717a;
+  margin-bottom: 28px;
 }
 
 form {
-  width: 80%;
+  width: 100%;
 }
 
-/* Input Row Pills */
+/* Input Row Fields */
 form > p {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 6px 14px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 form > p:focus-within {
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.03);
 }
 
 label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: #a1a1aa;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.12em;
 }
 
 input[type="text"] {
   width: 45%;
-  padding: 4px 8px;
+  padding: 2px 0;
   border: none;
   background: transparent;
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 600;
+  color: #f4f4f5;
+  font-size: 1.05rem;
+  font-weight: 500;
   text-align: right;
   outline: none;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Calculate Button */
 button {
   width: 100%;
-  padding: 10px;
+  padding: 14px;
   margin-top: 8px;
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-  color: #0f172a;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  background: #f4f4f5;
+  color: #09090b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   border: none;
-  border-radius: 25px;
+  border-radius: 14px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
 }
 
 button:hover {
   background: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
 }
 
 button:active {
@@ -121,36 +119,59 @@ button:active {
 
 /* Results Display */
 #results {
-  margin: 10px 0 6px;
-  font-size: 1.05rem;
+  margin: 22px 0 18px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #a1a1aa;
+  min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Styles the BMI number like the digital clock readout */
+#results span:first-child {
+  font-size: 1.85rem;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: #fafafa;
+}
+
+#results span:last-child {
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #38bdf8;
-  min-height: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #71717a;
 }
 
 /* Weight Guide */
 #weight-guide {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 4px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 #weight-guide h3 {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #64748b;
-  margin-bottom: 4px;
+  letter-spacing: 0.2em;
+  color: #52525b;
+  margin-bottom: 10px;
 }
 
-/* Resets <p> tag styles inside the weight guide */
 #weight-guide p {
   background: none;
   border: none;
   padding: 0;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   display: block;
-  font-size: 0.73rem;
-  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #71717a;
+  letter-spacing: 0.02em;
   text-align: center;
 }

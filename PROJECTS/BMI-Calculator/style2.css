@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #09090b;
+  background-image: radial-gradient(circle at 50% 0%, #18181b 0%, #09090b 75%);
+  color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ambient backlight orbs so the frosted glass has light to refract */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body::before {
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.07);
+  top: calc(50% - 240px);
+  left: calc(50% - 220px);
+}
+
+body::after {
+  width: 280px;
+  height: 280px;
+  background: rgba(161, 161, 170, 0.05);
+  bottom: calc(50% - 240px);
+  right: calc(50% - 220px);
+}
+
+/* Frosted Glass Container */
+.container {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.015) 100%
+  );
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  border-radius: 28px;
+  /* Asymmetric borders mimic overhead light hitting cut glass edges */
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  width: 400px;
+  padding: 40px 36px;
+  box-shadow: 
+    0 30px 60px -12px rgba(0, 0, 0, 0.85),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #a1a1aa;
+  margin-bottom: 28px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+form {
+  width: 100%;
+}
+
+/* Recessed Glass Input Wells */
+form > p {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(9, 9, 11, 0.35);
+  backdrop-filter: blur(12px);
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+form > p:focus-within {
+  background: rgba(26, 26, 26, 0.05);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.06),
+    inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+input[type="text"] {
+  width: 45%;
+  padding: 2px 0;
+  border: none;
+  background: transparent;
+  color: #fafafa;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-align: right;
+  outline: none;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Frosted Glass Button */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(228, 228, 231, 0.82) 100%
+  );
+  backdrop-filter: blur(8px);
+  color: #09090b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 14px 30px -5px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Results Display */
+#results {
+  margin: 22px 0 18px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #a1a1aa;
+  min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+#results span:first-child {
+  font-size: 1.85rem;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: #fafafa;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+#results span:last-child {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a1a1aa;
+}
+
+/* Weight Guide */
+#weight-guide {
+  margin-top: 4px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+#weight-guide h3 {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #71717a;
+  margin-bottom: 10px;
+}
+
+#weight-guide p {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 5px;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #a1a1aa;
+  letter-spacing: 0.02em;
+  text-align: center;
+}

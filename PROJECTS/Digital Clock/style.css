@@ -1,0 +1,59 @@
+/* Optional: Imports a clean, modern geometric font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #09090b;
+    background-image: radial-gradient(circle at 50% 0%, #18181b 0%, #09090b 75%);
+    color: #fafafa;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 48px 64px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 24px;
+    box-shadow: 
+        0 24px 48px -12px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+}
+
+#banner {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #71717a;
+}
+
+#clock {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: #f4f4f5;
+    /* Keeps numbers equal-width so the layout never twitches as seconds tick */
+    font-variant-numeric: tabular-nums;
+    min-width: 260px;
+    min-height: 1.2em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
