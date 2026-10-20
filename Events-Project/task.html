@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async First Project</title>
+</head>
+<body>
+    <h1></h1>
+    <button id="start">start</button>
+
+    <button id="stop">stop</button>
+    
+    <script>
+            // const sayDate = ()=>console.log("str",Date.now());
+            
+
+            // setInterval(sayDate,1000,"hi")
+
+
+
+            const start = document.querySelector('#start')
+            const stop = document.querySelector('#stop')
+            const func = ()=>console.log("str",Date.now());
+            let interval;
+
+            start.addEventListener('click',function(e){
+                
+                intervalId = setInterval(func, 1000, "hi");
+
+                
+            })
+
+
+            stop.addEventListener('click', function(e){
+                clearInterval(intervalId)
+                console.log("Stopped");
+                
+            })
+    
+
+    </script>
+</body>
+</html>
