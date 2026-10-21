@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="project">
+        <div id="insert">
+            <div class="key">Press the key and watch the Magic</div>
+        </div>
+    </div>
+    <script>
+
+        const insert = document.getElementById('insert')
+        const defaultText = `<div class="key">Press the key and watch the Magic</div>`
+        let idleTimer;
+
+
+        window.addEventListener('keydown',function(e){
+
+            clearTimeout(idleTimer);
+
+            insert.innerHTML = `
+                <div class="color">
+                    <table>
+    <tr>
+        <th>Key</th>
+        <th>Keycode</th> 
+        <th>Code</th>
+    </tr>
+    <tr>
+        <td>${e.key === ' ' ? 'Space' : e.key}</td>
+        <td>${e.keyCode}</td> 
+        <td>${e.code}</td>
+    </tr>
+    
+  </table>
+    </div>
+                </div>
+            `;
+
+
+            idleTimer = setTimeout(function(){
+                insert.innerHTML = defaultText;
+            },3000);
+        })
+
+    </script>
+</body>
+</html>
